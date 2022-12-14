@@ -4,7 +4,8 @@ import {Link } from 'react-router-dom'
 function SideNavItem() {
   return (
     <>
-   
+     {/* -Use state to needed when clicked outside and a tool bar item for click
+     -Nav bar too tall */}
 <aside  class ="fixed inset-y-0 left-0 bg-white shadow-md max-h-screen w-60">
    <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800 flex-grow">
       <a href="https://flowbite.com/" class="flex items-center pl-2.5 mb-5">

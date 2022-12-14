@@ -1,4 +1,5 @@
 import React from 'react'
+import CardUI from '../UI/CardUI'
 
 function DashBoard() {
   return (
@@ -11,7 +12,7 @@ function DashBoard() {
           <h1 class="text-4xl font-semibold mb-2">Money Insights</h1>
           
         </div>
-        <div class="flex flex-wrap items-start justify-end -mb-3">
+        <div class="flex flex-wrap items-start space-evenly justify-end -mb-3">
         <button class="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg font-medium rounded-md">
           Daily
           </button>
@@ -40,9 +41,10 @@ function DashBoard() {
 
 
         <div class="bg-white rounded-3xl p-8 mb-5">
-          <h1 class="text-3xl font-bold mb-10">Messaging ID framework development for the marketing branch</h1>
+              
+          <CardUI/>
           <div class="flex items-center justify-between">
-            <div class="flex items-stretch">
+            {/* <div class="flex items-stretch">
               <div class="text-gray-400 text-xs">Members connected</div>
               <div class="h-100 border-l mx-4"></div>
               <div class="flex flex-nowrap -space-x-3">
@@ -53,8 +55,8 @@ function DashBoard() {
                   <img class="object-cover w-full h-full rounded-full" src="https://ui-avatars.com/api/?background=random"/>
                 </div>
               </div>
-            </div>
-            <div class="flex items-center gap-x-2">
+            </div> */}
+            {/* <div class="flex items-center gap-x-2">
               <button type="button" class="inline-flex items-center justify-center h-9 px-3 rounded-xl border hover:border-gray-400 text-gray-800 hover:text-gray-900 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
                   <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
@@ -63,7 +65,7 @@ function DashBoard() {
               <button type="button" class="inline-flex items-center justify-center h-9 px-5 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition">
                 Open
               </button>
-            </div>
+            </div> */}
           </div>
 
           <hr class="my-10"/>
@@ -93,14 +95,15 @@ function DashBoard() {
                 </div>
                 <div class="col-span-2">
                   <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
-                    <div class="font-bold text-xl leading-none">Your daily plan</div>
-                    <div class="mt-2">5 of 8 completed</div>
+                    <div class="font-bold text-xl leading-none">Your Expesnses Today</div>
+                    <div class="mt-2">This should be in KSH</div>
                   </div>
                 </div>
               </div>
             </div>
             <div>
-              <h2 class="text-2xl font-bold mb-4">Your tasks today</h2>
+               {/* This section should use map or  set state */}
+              <h2 class="text-2xl font-bold mb-4">Your Investment Plan/Ideas</h2>
 
               <div class="space-y-4">
                 <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
