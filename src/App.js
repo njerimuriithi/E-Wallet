@@ -1,6 +1,10 @@
 
 import SideNav from './Componets/NavBar/SideNav';
 import TopNav from './Componets/NavBar/TopNav';
+//import {Routes ,Route} from 'react-router-dom'
+//import DashBoard from './Pages/DashBoard';
+//import DailyTransactions from './Componets/AllTransactions/DailyTransactions';
+//import Transactions from './Pages/Transactions';
 
 
 function App() {
@@ -9,7 +13,10 @@ function App() {
     <div >
 
      <TopNav/> 
-       <SideNav/>  
+       <SideNav/> 
+
+
+      
     </div>
   );
 }

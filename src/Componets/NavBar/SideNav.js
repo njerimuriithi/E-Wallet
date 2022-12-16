@@ -11,7 +11,7 @@ function SideNav() {
         <SideNavItem/>
         <Routes>
             <Route path="/" element={<DashBoard/>}/>
-            <Route path="transactions" element ={<Transactions/>}/>
+          
 
         </Routes>
 

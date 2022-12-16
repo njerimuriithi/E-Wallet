@@ -1,21 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CardUI from '../UI/CardUI'
 import BankAccount from './BankAccount'
+import { Button,Typography } from "@material-tailwind/react";
+import { useNavigate } from 'react-router-dom';
+import SideNav from '../Componets/NavBar/SideNav';
 
 function DashBoard() {
+  const navigate = useNavigate();
+  const [showNav, setShowNav]= useState(true)
   return (
     <>
     <div className='float-left ml-[210px]'>
       <main class="p-6 sm:p-10 space-y-6">
     <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
       <div class="max-w-4xl mx-auto">
-      <div class="mr-6">
-        {/* M */}
-          <h1 class="text-4xl font-semibold mb-2">Money Insights</h1>
-          
+      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+        <Typography
+          as="a"
+          href="#"
+          variant="h3"
+          className="mr-4 cursor-pointer py-1.5 font-normal"
+        >
+          <span>Money Insights</span>
+        </Typography>
+
+        <div className="flex w-max gap-4">
+        <Button variant="gradient"
+        
+        onClick={()=>navigate("/dailyTransactions")}
+        >Daily</Button>
+        <Button variant="gradient">Monthly</Button>
+        <Button variant="gradient">Yearly</Button>
+          </div>
         </div>
-        <div class="flex flex-wrap items-start space-evenly justify-end -mb-3">
-        <button class="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg font-medium rounded-md">
+        {/* <div class="flex flex-wrap items-start space-evenly justify-end -mb-3">
+        <button class="inline-flex items-center ml-10 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg font-medium rounded-md">
           Daily
           </button>
           <button class="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-lg font-medium rounded-md">
@@ -36,8 +55,8 @@ function DashBoard() {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
             Create new dashboard
-          </button> */}
-        </div>
+          </button> 
+        </div> */}
         
 
 
@@ -148,7 +167,7 @@ function DashBoard() {
     </div>
   </main>
     </div>
-    <div className='float-right mr-[350px] pt-6'>
+    <div className='float-right mr-[350px] pt-6 shadow-sm'>
       <BankAccount/>
     </div>
     </>
