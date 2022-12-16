@@ -10,7 +10,7 @@ function SideNav() {
     <div>
         <SideNavItem/>
         <Routes>
-            <Route path="dashboard" element={<DashBoard/>}/>
+            <Route path="/" element={<DashBoard/>}/>
             <Route path="transactions" element ={<Transactions/>}/>
 
         </Routes>

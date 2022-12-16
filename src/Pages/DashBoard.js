@@ -1,9 +1,11 @@
 import React from 'react'
 import CardUI from '../UI/CardUI'
+import BankAccount from './BankAccount'
 
 function DashBoard() {
   return (
-    <div>
+    <>
+    <div className='float-left ml-[210px]'>
       <main class="p-6 sm:p-10 space-y-6">
     <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
       <div class="max-w-4xl mx-auto">
@@ -146,6 +148,12 @@ function DashBoard() {
     </div>
   </main>
     </div>
+    <div className='float-right mr-[350px] pt-6'>
+      <BankAccount/>
+    </div>
+    </>
+    
+
   )
 }
 
