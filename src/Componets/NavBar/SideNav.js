@@ -4,13 +4,15 @@ import {Routes ,Route} from 'react-router-dom'
 import DashBoard from '../../Pages/DashBoard';
 import Transactions from '../../Pages/Transactions.Js';
 import SideNavItem from './SideNavItem';
+import DailyTransactions from '../AllTransactions/DailyTransactions';
 
 function SideNav() {
   return (
     <div>
-        <SideNavItem/>
+        {/* <SideNavItem/> */}
         <Routes>
-            <Route path="/" element={<DashBoard/>}/>
+            {/* <Route path="/" element={<DashBoard/>}/> */}
+            <Route path="/" element={<DailyTransactions/>}/>
           
 
         </Routes>

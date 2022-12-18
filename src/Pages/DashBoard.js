@@ -167,7 +167,7 @@ function DashBoard() {
     </div>
   </main>
     </div>
-    <div className='float-right mr-[350px] pt-6 shadow-sm'>
+    <div className='float-right mr-[30px] pt-6 shadow-sm'>
       <BankAccount/>
     </div>
     </>
