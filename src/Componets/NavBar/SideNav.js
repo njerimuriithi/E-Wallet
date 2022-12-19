@@ -9,10 +9,10 @@ import DailyTransactions from '../AllTransactions/DailyTransactions';
 function SideNav() {
   return (
     <div>
-        {/* <SideNavItem/> */}
+         <SideNavItem/> 
         <Routes>
-            {/* <Route path="/" element={<DashBoard/>}/> */}
-            <Route path="/" element={<DailyTransactions/>}/>
+             <Route path="/" element={<DashBoard/>}/> 
+            {/* <Route path="/" element={<DailyTransactions/>}/> */}
           
 
         </Routes>

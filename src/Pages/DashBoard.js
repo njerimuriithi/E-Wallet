@@ -10,22 +10,23 @@ function DashBoard() {
   const [showNav, setShowNav]= useState(true)
   return (
     <>
-    <div className='float-left ml-[210px]'>
+    <div id="main-content" className="h-full w-full bg-gray-50 relative flex items-stretch grid grid-cols-2 gap-2 overflow-y-auto lg:ml-64">
+    {/* <div className='float-left ml-[210px]'> */}
       <main class="p-6 sm:p-10 space-y-6">
     <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
       <div class="max-w-4xl mx-auto">
-      <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as="a"
-          href="#"
-          variant="h3"
-          className="mr-4 cursor-pointer py-1.5 font-normal"
-        >
-          <span>Money Insights</span>
-        </Typography>
+        <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+              <Typography
+                as="a"
+                href="#"
+                variant="h3"
+                className="mr-4 cursor-pointer py-1.5 font-normal"
+              >
+                <span>Money Insights</span>
+              </Typography>
 
-        <div className="flex w-max gap-4">
-        <Button variant="gradient"
+          <div className="flex w-max gap-4">
+            <Button variant="gradient"
         
         onClick={()=>navigate("/dailyTransactions")}
         >Daily</Button>
@@ -166,10 +167,11 @@ function DashBoard() {
       </div>
     </div>
   </main>
+  <BankAccount/>
     </div>
-    <div className='float-right mr-[30px] pt-6 shadow-sm'>
+   {/* <div className='float-right mr-[30px] pt-6 shadow-sm'>
       <BankAccount/>
-    </div>
+    </div>  */}
     </>
     
 
