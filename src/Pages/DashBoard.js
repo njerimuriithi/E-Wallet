@@ -8,6 +8,7 @@ import SideNav from '../Componets/NavBar/SideNav';
 function DashBoard() {
   const navigate = useNavigate();
   const [showNav, setShowNav]= useState(true)
+  //I think the side navbar needs to be reduced.
   return (
     <>
     <div id="main-content" className="h-full w-full bg-gray-50 relative flex items-stretch grid grid-cols-2 gap-2 overflow-y-auto lg:ml-64">
@@ -30,7 +31,10 @@ function DashBoard() {
         
         onClick={()=>navigate("/dailyTransactions")}
         >Daily</Button>
-        <Button variant="gradient">Monthly</Button>
+        <Button 
+        variant="gradient"
+        onClick={()=>navigate("/monthlyTransactions")}
+        >Monthly</Button>
         <Button variant="gradient">Yearly</Button>
           </div>
         </div>

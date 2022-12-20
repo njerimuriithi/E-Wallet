@@ -30,24 +30,24 @@ function DailyTransactions() {
   
 </div>
  {/* start of navbarhorizontal */}
- <div class="grid grid-cols-7 content-start">
+ <div class="grid grid-cols-2 content-start">
         <div>
         <button class="font-bold text-gray-800 tracking-widest text-center">All Transactions</button>
         </div>
-        <div>
+         <div>
         <button class="font-bold text-gray-800 tracking-widest text-center">Expenses</button>
-        </div>
+        </div> 
         
         
-</div>
-  <h4 className='mt-10 text-gray-600 '>Newest</h4>
+
+  {/* <h4 className='mt-10 text-gray-600 '>Newest</h4> */}
     {/* Endofalltransactions */}
 
     {/* startNewest */}
-    <div class="flex flex-col w-[700px]">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
+    {/* <div class="">
+  <div class="">
+    <div class="">
+      <div class="">
         <table class="min-w-full text-center">
         <thead>
             <tr>
@@ -84,12 +84,12 @@ function DailyTransactions() {
       </div>
     </div>
   </div>
-</div>
+</div> */}
   
     {/* EndOfNewstTransaction */}
-    <h4 className='mt-10 text-gray-600 '>Yesterday</h4>
+    {/* <h4 className='mt-10 text-gray-600 '>Yesterday</h4> */}
     {/* StartOfYesterdayTransaction */}
-    <div class="flex flex-col w-[700px]">
+    {/* <div class="flex flex-col w-[700px]">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -115,12 +115,12 @@ function DailyTransactions() {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
     {/* EndOfYesterdayTransaction */}
-    <h4 className='mt-10 text-gray-600 '>Specific Date Transactions</h4>
+    {/* <h4 className='mt-10 text-gray-600 '>Specific Date Transactions</h4> */}
     {/* StartOfDateTransactions */}
-    <div class="flex flex-col w-[700px]">
+    {/* <div class="flex flex-col w-[700px]">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -146,12 +146,12 @@ function DailyTransactions() {
       </div>
     </div>
   </div>
-</div>
+</div> */}
 
     {/* EndOfDateTransactions */}
    
    
-
+    </div>
 
     </div>
   )

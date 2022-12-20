@@ -4,6 +4,7 @@ import TopNav from './Componets/NavBar/TopNav';
 import {Routes ,Route} from 'react-router-dom'
 import DashBoard from './Pages/DashBoard';
 import DailyTransactions from './Componets/AllTransactions/DailyTransactions';
+import MonthlyTransactions from './Componets/AllTransactions/MonthlyTransactions';
 //import DailyTransactions from './Componets/AllTransactions/DailyTransactions';
 //import Transactions from './Pages/Transactions';
 
@@ -18,6 +19,7 @@ function App() {
        <Routes>
              <Route path="/" element={<DashBoard/>}/> 
              <Route path="/dailytransactions" element={<DailyTransactions/>}/>
+             <Route path='/monthlytransactions' element={<MonthlyTransactions/>}/>
             {/* <Route path="/" element={<DailyTransactions/>}/> */}
           
 
