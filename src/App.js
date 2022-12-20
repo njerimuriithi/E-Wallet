@@ -1,8 +1,9 @@
 
 import SideNav from './Componets/NavBar/SideNav';
 import TopNav from './Componets/NavBar/TopNav';
-//import {Routes ,Route} from 'react-router-dom'
-//import DashBoard from './Pages/DashBoard';
+import {Routes ,Route} from 'react-router-dom'
+import DashBoard from './Pages/DashBoard';
+import DailyTransactions from './Componets/AllTransactions/DailyTransactions';
 //import DailyTransactions from './Componets/AllTransactions/DailyTransactions';
 //import Transactions from './Pages/Transactions';
 
@@ -14,6 +15,14 @@ function App() {
 
      <TopNav/> 
        <SideNav/> 
+       <Routes>
+             <Route path="/" element={<DashBoard/>}/> 
+             <Route path="/dailytransactions" element={<DailyTransactions/>}/>
+            {/* <Route path="/" element={<DailyTransactions/>}/> */}
+          
+
+        </Routes>
+
 
 
       

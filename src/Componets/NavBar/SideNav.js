@@ -10,12 +10,12 @@ function SideNav() {
   return (
     <div>
          <SideNavItem/> 
-        <Routes>
+        {/* <Routes>
              <Route path="/" element={<DashBoard/>}/> 
             {/* <Route path="/" element={<DailyTransactions/>}/> */}
           
 
-        </Routes>
+        {/* </Routes>  */}
 
 
     </div>

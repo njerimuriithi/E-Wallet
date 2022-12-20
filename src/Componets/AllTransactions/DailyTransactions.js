@@ -7,7 +7,7 @@ function DailyTransactions() {
   //const navigate = useNavigate();
    
   return (
-    <div className='float-left ml-[210px]'>
+    <div className='h-full w-full bg-gray-50 relative  mt-4 overflow-y-auto lg:ml-64'>
       <div class="h-20 grid grid-cols-3 gap-4 content-center ">
       <div> 
       <h4 class="text-2xl font-bold text-gray-800 tracking-widest text-center">Your Transactions</h4>
@@ -17,7 +17,7 @@ function DailyTransactions() {
       <div class="flex items-center justify-center">
     <div class="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
     <input type="text"
-      class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+      class="form-control block w-50 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
       placeholder="Select a date" />
    
     <button class="datepicker-toggle-button" data-mdb-toggle="datepicker">
