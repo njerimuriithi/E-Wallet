@@ -11,7 +11,7 @@ function DashBoard() {
   //I think the side navbar needs to be reduced.
   return (
     <>
-    <div id="main-content" className="h-full w-full bg-gray-50 relative flex items-stretch grid grid-cols-2 gap-2 overflow-y-auto lg:ml-64">
+    <div id="main-content" className="h-full mt-10 w-full bg-gray-50 relative flex items-stretch grid grid-cols-2 gap-2 overflow-y-auto lg:ml-64">
     {/* <div className='float-left ml-[210px]'> */}
       <main class="p-6 sm:p-10 space-y-6">
     <div class="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">

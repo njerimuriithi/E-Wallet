@@ -1,10 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from 'devextreme-react'
+import PieChart from '../../UI/PieChart'
 //import {useNavigate} from "react-router-dom"
 
 function DailyTransactions() {
   //const navigate = useNavigate();
+  //This component shold be dynamic and is resusable
    
   return (
     <div className='h-full w-full bg-gray-50 relative  mt-4 overflow-y-auto lg:ml-64'>
@@ -34,48 +36,22 @@ function DailyTransactions() {
         <div>
         <button class="font-bold text-gray-800 tracking-widest text-center">All Transactions</button>
         </div>
-         <div>
-        <button class="font-bold text-gray-800 tracking-widest text-center">Expenses</button>
-        </div> 
-
+        <div>
+        <button class="font-bold text-gray-800 tracking-widest text-center ml-20">Expenses</button>
+        </div>
+      
         
-        <table class="table-auto">
-  <thead>
-    <tr>
-      <th>Song</th>
-      <th>Artist</th>
-      <th>Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-      <td>Malcolm Lockyer</td>
-      <td>1961</td>
-    </tr>
-    <tr>
-      <td>Witchy Woman</td>
-      <td>The Eagles</td>
-      <td>1972</td>
-    </tr>
-    <tr>
-      <td>Shining Star</td>
-      <td>Earth, Wind, and Fire</td>
-      <td>1975</td>
-    </tr>
-  </tbody>
-</table>
-        
-
+</div>
   {/* <h4 className='mt-10 text-gray-600 '>Newest</h4> */}
     {/* Endofalltransactions */}
 
     {/* startNewest */}
-    {/* <div class="">
-  <div class="">
-    <div class="">
-      <div class="">
-        <table class="min-w-full text-center">
+    <div class="grid grid-cols-2 content-start">
+    {/* <div class="flex flex-col w-[700px]">
+  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden"> */}
+        <table class="min-w-full text-center h-[100px]">
         <thead>
             <tr>
              
@@ -108,7 +84,7 @@ function DailyTransactions() {
            
           </tbody>
         </table>
-      </div>
+      {/* </div>
     </div>
   </div>
 </div> */}
@@ -176,9 +152,11 @@ function DailyTransactions() {
 </div> */}
 
     {/* EndOfDateTransactions */}
-   
-   
-    </div>
+   <div  className='ml-20 mt-10'>
+    <PieChart/>
+   </div>
+</div>
+
 
     </div>
   )

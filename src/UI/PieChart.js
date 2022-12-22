@@ -19,7 +19,7 @@ function PieChart() {
   }
   return (
     <div>
-      <div className='mt-16 ml-[400px] w-[250px] h-[250px]'>
+      <div className='  w-[250px] h-[250px]'>
       <Pie data={userdata}/>
       </div>
             
