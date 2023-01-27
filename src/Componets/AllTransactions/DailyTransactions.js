@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PieChart from '../../UI/PieChart'
 import {useNavigate} from "react-router-dom"
@@ -10,10 +10,24 @@ import {
   Button,
   Input
 } from "@material-tailwind/react";
+import axios from 'axios'
 
 function DailyTransactions() {
   const navigate = useNavigate();
+  const [transaction , setTransaction] = useState();
+
   const [openForm ,setOpenForm] = useState(false);
+
+  useEffect(()=>{
+    axios.get('')
+    .then(response =>{
+      setTransaction(response.data)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+
+  },[])
   //This component shold be dynamic and is resusable
    
   return (
@@ -84,39 +98,48 @@ function DailyTransactions() {
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden"> */}
-        <table class="min-w-full text-center h-[100px]">
-        <thead>
-            <tr>
-             
-              <th scope="col" class="text-sm font-medium text-gray-900 px-4 py-4">
-                Name
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                Company
-              </th>
-              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                Amount
-              </th>
-            </tr>
-          </thead>
-          
-          <tbody>
-            <tr className= "bg-blue-100 ">
-             
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                withdrawal
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Safaricom
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                1000
-              </td>
-            </tr>
+       <table class="min-w-full text-center h-[100px]">
+       <thead>
+              <tr>
+               
+                <th scope="col" class="text-sm font-medium text-gray-900 px-4 py-4">
+                  Name
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                  Company
+                </th>
+                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                  Amount
+                </th>
+              </tr>
+            </thead>
+      {
+        transaction.map(DT =>(
+         
+         
             
-           
-          </tbody>
-        </table>
+            <tbody key={DT.id}>
+              <tr className= "bg-blue-100 ">
+               
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.transactionName}
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.companyName}
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.transactionCost}
+                </td>
+              </tr>
+              
+             
+            </tbody>
+          
+
+        ))
+      }
+      </table>
+      
       {/* </div>
     </div>
   </div>
