@@ -16,8 +16,7 @@ function App() {
   return (
     <div >
 
-     <TopNav/> 
-       <SideNav/> 
+      <TopNav/>
        <Routes>
              <Route path="/" element={<DashBoard/>}/> 
              <Route path="/dailytransactions" element={<DailyTransactions/>}/>

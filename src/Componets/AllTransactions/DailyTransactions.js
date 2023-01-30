@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PieChart from '../../UI/PieChart'
 import {useNavigate} from "react-router-dom"
 import FormUI from '../../UI/FormUI'
+import Transactions from '../../DataTransactions/DailyData'
 import {
   Popover,
   PopoverHandler,
@@ -11,17 +12,21 @@ import {
   Input
 } from "@material-tailwind/react";
 import axios from 'axios'
+import AddNewTransaction from '../../Pages/AddNewTransaction'
 
 function DailyTransactions() {
-  const navigate = useNavigate();
-  const [transaction , setTransaction] = useState();
 
-  const [openForm ,setOpenForm] = useState(false);
+  
+  const navigate = useNavigate();
+  const [transaction , setTransaction] = useState([]);
+
+ 
 
   useEffect(()=>{
-    axios.get('')
+    axios.get('https://localhost:7196/api/DailyTransactions')
     .then(response =>{
       setTransaction(response.data)
+      console.log(response.data);
     })
     .catch(err=>{
       console.log(err)
@@ -31,7 +36,7 @@ function DailyTransactions() {
   //This component shold be dynamic and is resusable
    
   return (
-    <div className='h-full w-full bg-gray-50 relative  mt-4 overflow-y-auto lg:ml-64'>
+    <div className='h-full w-full bg-gray-50 relative  mt-4 overflow-y-auto lg:ml-70'>
       <div class="h-20 grid grid-cols-3 gap-4 content-center ">
       <div> 
       <h4 class="text-2xl font-bold text-gray-800 tracking-widest text-center">Your Transactions</h4>
@@ -54,41 +59,7 @@ function DailyTransactions() {
   
 </div>
  {/* start of navbarhorizontal */}
- <div class="grid grid-cols-3 content-start">
-        <div>
-        <button class="font-bold text-gray-800 tracking-widest text-center">All Transactions</button>
-        </div>
-        <Popover placement="bottom-end">
-        <PopoverHandler>
-        <button type="button" 
-         onClick={()=>setOpenForm(true)}
-        class="w-[148px] inline-block px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">
-        Add New</button>
-        </PopoverHandler>
-        <PopoverContent className="w-[350px] h-[360px]">
-        <div className="flex w-72 flex-col gap-4">
-        <Input color="purple" label="Transaction Name" />
-        <Input color="purple" label="Company" />
-        <Input color="purple" label="Amount" />
-        <Input color="purple" label="Transaction Cost" />
-        <Input color="purple" label="Type of Transaction" />
-        
-        </div>
-        <button type="button" 
-        
-        class="w-[148px] inline-block mt-4 px-6 py-2.5 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">
-        Submit </button>
-        
-          {/* <FormUI open={openForm}/> */}
-        </PopoverContent>
-        
-        </Popover>
-        <div>
-        <button class="font-bold text-gray-800 tracking-widest text-center ml-20">Expenses</button>
-        </div>
-      
-        
-</div>
+   <AddNewTransaction  />
   {/* <h4 className='mt-10 text-gray-600 '>Newest</h4> */}
     {/* Endofalltransactions */}
 
@@ -102,19 +73,31 @@ function DailyTransactions() {
        <thead>
               <tr>
                
-                <th scope="col" class="text-sm font-medium text-gray-900 px-4 py-4">
+                <th scope="col" class="text-sm font-small text-gray-900 ">
                   Name
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                <th scope="col" class="text-sm font-small text-gray-900 px-6 py-4">
                   Company
                 </th>
-                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                  Amount
+                <th scope="col" class="text-sm font-small text-gray-900 px-6 py-4">
+                TransactionCost
+                </th>
+                <th scope="col" class="text-sm font-small text-gray-900 px-6 py-4">
+                TransactionCostCharges
+                </th>
+                <th scope="col" class="text-sm font-small text-gray-900 px-6 py-4">
+                 ModeOfPayment
+                </th>
+                <th scope="col" class="text-sm font-small text-gray-900 px-6 py-4">
+                DateOfTransaction
+                </th>
+                <th scope="col" class="text-sm font-small text-gray-900 px-6 py-4">
+                TransactionType
                 </th>
               </tr>
             </thead>
       {
-        transaction.map(DT =>(
+        transaction.map(DT =>
          
          
             
@@ -130,87 +113,37 @@ function DailyTransactions() {
                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                   {DT.transactionCost}
                 </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.transactionCostCharges}
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.modeOfPayment}
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.dateOfTransaction}
+                </td>
+                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                  {DT.transactionType}
+                </td>
+                
               </tr>
               
              
             </tbody>
           
 
-        ))
+        )
       }
       </table>
-      
-      {/* </div>
-    </div>
-  </div>
-</div> */}
+
   
-    {/* EndOfNewstTransaction */}
-    {/* <h4 className='mt-10 text-gray-600 '>Yesterday</h4> */}
-    {/* StartOfYesterdayTransaction */}
-    {/* <div class="flex flex-col w-[700px]">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table class="min-w-full text-center">
-           
-          <tbody>
-            <tr className= "bg-green-100 ">
-             
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                withdrawal
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Safaricom
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                1000
-              </td>
-            </tr>
-            
-           
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div> */}
+ 
 
-    {/* EndOfYesterdayTransaction */}
-    {/* <h4 className='mt-10 text-gray-600 '>Specific Date Transactions</h4> */}
-    {/* StartOfDateTransactions */}
-    {/* <div class="flex flex-col w-[700px]">
-  <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <table class="min-w-full text-center">
-           
-          <tbody>
-            <tr className= "bg-indigo-100 ">
-             
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                withdrawal
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                Safaricom
-              </td>
-              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                1000
-              </td>
-            </tr>
-            
-           
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div> */}
-
-    {/* EndOfDateTransactions */}
-   <div  className='ml-20 mt-10'>
+    {/* EndOfDateTransactions 
+   <div  className='ml-10 mt-10'>
     <PieChart/>
    </div>
+   */}
 </div>
 
 
