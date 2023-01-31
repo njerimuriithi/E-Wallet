@@ -60,6 +60,7 @@ function DailyTransactions() {
 </div>
  {/* start of navbarhorizontal */}
    <AddNewTransaction  />
+   <button>Delete</button>
   {/* <h4 className='mt-10 text-gray-600 '>Newest</h4> */}
     {/* Endofalltransactions */}
 
